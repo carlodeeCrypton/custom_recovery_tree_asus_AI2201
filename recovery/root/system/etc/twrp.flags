@@ -42,6 +42,4 @@
 /asuskey6		emmc	/dev/block/bootdevice/by-name/asuskey6								flags=backup=1;subpartitionof=/sysconf
 
 # Removable storage
-#/usbstorage		vfat	/dev/block/sdh1									/dev/block/sdh		flags=fsflags=utf8;display="USB Storage";storage;wipeingui;removable
-/external_sd                   vfat                     /dev/block/mmcblk0p1         /dev/block/mmcblk0         flags=display="Micro SD Card";storage;wipeingui;removable
 /usb-otg                       vfat                     /dev/block/sdd               /dev/block/sdd1            flags=display="USB OTG";storage;wipeingui;removable

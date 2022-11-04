@@ -67,10 +67,10 @@ BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_FLASH_BLOCK_SIZE := 262144 # (BOARD_KERNEL_PAGESIZE * 64)
 
 # Dynamic/Logical Partitions
-BOARD_SUPER_PARTITION_SIZE := 6442450944
-BOARD_SUPER_PARTITION_GROUPS := qti_dynamic_partitions
-BOARD_QTI_DYNAMIC_PARTITIONS_SIZE := 6438256640 # BOARD_SUPER_PARTITION_SIZE - 4MB
-BOARD_QTI_DYNAMIC_PARTITIONS_PARTITION_LIST := vendor vendor_dlkm odm
+BOARD_SUPER_PARTITION_SIZE := 9126805504 # TODO: Fix hardcoded value
+BOARD_SUPER_PARTITION_GROUPS := asus_dynamic_partitions
+BOARD_ASUS_DYNAMIC_PARTITIONS_PARTITION_LIST := system system_ext product vendor
+BOARD_ASUS_DYNAMIC_PARTITIONS_SIZE := 9122611200
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x06400000
 
 # Platform
@@ -143,8 +143,6 @@ TW_MAX_BRIGHTNESS := 1024
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_EXTRA_LANGUAGES := true
 TW_INCLUDE_CRYPTO := true
-TW_INCLUDE_CRYPTO_FBE := true
-TW_USE_FSCRYPT_POLICY := 2
 TW_NO_EXFAT_FUSE := true
 TW_INCLUDE_REPACKTOOLS := true
 TW_INCLUDE_RESETPROP := true
@@ -165,7 +163,6 @@ TARGET_RECOVERY_DEVICE_MODULES += debuggerd
 RECOVERY_BINARY_SOURCE_FILES += $(TARGET_OUT_EXECUTABLES)/debuggerd
 TARGET_RECOVERY_DEVICE_MODULES += strace
 RECOVERY_BINARY_SOURCE_FILES += $(TARGET_OUT_EXECUTABLES)/strace
-
 
 # TWRP specific build flags
 TW_LOAD_VENDOR_MODULES := "adsp_loader_dlkm.ko asus_battery_charger_AI2202.ko ax88179_178a.ko dwc3-msm.ko focaltech_fts_3658u.ko leds-qpnp-vibrator-ldo.ko qcom-hv-haptics.ko qseecom-mod.ko qti_battery_charge_notify.ko qti_battery_charger.ko ssusb-redriver-nb7vpq904m.ko synaptics_dsx.ko texfat.ko tfs_linux.ko tntfs.ko usb_bam.ko usb_f_ccid.ko usb_f_cdev.ko usb_f_diag.ko usb_f_gsi.ko usb_f_qdss.ko"

@@ -1,5 +1,7 @@
 # Battery Property
 ro.charger.enable_suspend=1
 
-# USB Config
-vendor.usb.use_ffs_mtp=1
+# MTP/ADB Override
+persist.sys.usb.config=mtp,adb
+persist.service.adb.enable=1
+persist.service.debuggable=1

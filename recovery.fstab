@@ -51,7 +51,3 @@
 # The update_engine code looks for this entry in order to determine the boot device address
 # and fails if it does not find it.
 /dev/block/bootdevice/by-name/misc         emmc             /misc                      defaults   
-
-# Removable
-/external_sd                   vfat                     /dev/block/mmcblk0p1         /dev/block/mmcblk0         flags=display="Micro SD Card";storage;wipeingui;removable
-/usb-otg                       vfat                     /dev/block/sdd               /dev/block/sdd1            flags=display="USB OTG";storage;wipeingui;removable

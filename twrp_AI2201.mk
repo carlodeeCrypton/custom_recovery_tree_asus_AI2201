@@ -34,3 +34,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 # Virtual A/B
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    PRIVATE_BUILD_DESC="WW_AI2201-user 12 SKQ1.220406.001 32.2810.2210.216-0 release-keys"
+
+BUILD_FINGERPRINT := asus/WW_AI2201/ASUS_AI2201:12/SKQ1.220406.001/32.2810.2210.216-0:user/release-keys
