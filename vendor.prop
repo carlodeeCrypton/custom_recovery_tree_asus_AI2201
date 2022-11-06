@@ -14,3 +14,7 @@ vendor.gatekeeper.disable_spu=true
 
 # USB Config
 vendor.usb.use_ffs_mtp=1
+vendor.usb.use_gadget_hal=1
+
+# ADB
+ro.adb.secure=0
