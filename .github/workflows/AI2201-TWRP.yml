@@ -169,7 +169,7 @@ jobs:
           - To be edited.
           - To be edited. 
 
-      name: Github Release URL
+    - name: Github Release URL
       run: |
         echo "Printing your Release URL"
         echo "https://github.com/${GITHUB_REPOSITORY}/releases/tag/rog6-v${{ steps.props.outputs.date }}-${{ github.run_id }}"
