@@ -149,27 +149,27 @@ jobs:
     - name: Zip Files
       run: |
         cd randomfiles/twrp_abtemplate
-        zip -rv ${{ github.event.inputs.MANIFEST_BRANCH }}-3.7.0-${{ github.event.inputs.DEVICE_NAME }}-${{ steps.props.outputs.date }}.zip magiskboot recovery.img META-INF/
+        zip -rv ${{ github.event.inputs.MANIFEST_BRANCH }}-3.2.0-${{ github.event.inputs.DEVICE_NAME }}-${{ steps.props.outputs.date }}.zip magiskboot recovery.img META-INF/
 
     - name: Renaming into TWRP
       run: |
         cd out/target/product/${{ github.event.inputs.DEVICE_NAME }}
-        mv ${{ github.event.inputs.BUILD_TARGET }}.img ${{ github.event.inputs.MANIFEST_BRANCH }}-3.7.0-${{ github.event.inputs.DEVICE_NAME }}-${{ steps.props.outputs.date }}.img
+        mv ${{ github.event.inputs.BUILD_TARGET }}.img ${{ github.event.inputs.MANIFEST_BRANCH }}-3.2.0-${{ github.event.inputs.DEVICE_NAME }}-${{ steps.props.outputs.date }}.img
       working-directory: ${{ steps.pwd.outputs.workdir }}
 
     - name: Upload to Release
       uses: ncipollo/release-action@v1.11.1
       with:
         artifacts: |
-          workspace/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/${{ github.event.inputs.MANIFEST_BRANCH }}-3.7.0-${{ github.event.inputs.DEVICE_NAME }}-${{ steps.props.outputs.date }}.img
-          randomfiles/twrp_abtemplate/${{ github.event.inputs.MANIFEST_BRANCH }}-3.7.0-${{ github.event.inputs.DEVICE_NAME }}-${{ steps.props.outputs.date }}.zip
+          workspace/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/${{ github.event.inputs.MANIFEST_BRANCH }}-3.2.0-${{ github.event.inputs.DEVICE_NAME }}-${{ steps.props.outputs.date }}.img
+          randomfiles/twrp_abtemplate/${{ github.event.inputs.MANIFEST_BRANCH }}-3.2.0-${{ github.event.inputs.DEVICE_NAME }}-${{ steps.props.outputs.date }}.zip
         name: Unofficial PBRP for ROG Phone 6 (ASUS_AI2201) - Build ${{ steps.props.outputs.date }} / ${{ github.run_id }}
         draft: false
         prerelease: true
         token: ${{ secrets.GITHUB_TOKEN }}
         tag: rog6-v${{ steps.props.outputs.date }}-${{ github.run_id }}
         body: |
-          ## PBRP-12.1-ASUS_AI2201-${{ steps.props.outputs.date }}
+          ## PBRP 3.2.0-12.1-ASUS_AI2201-${{ steps.props.outputs.date }}
           - To be edited.
           - To be edited.
           - To be edited. 
