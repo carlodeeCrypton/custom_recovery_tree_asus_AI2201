@@ -178,4 +178,20 @@ TW_USE_SERIALNO_PROPERTY_FOR_DEVICE_ID := true
 TW_NO_SCREEN_BLANK := true
 
 # TWRP Version
-TW_DEVICE_VERSION := AI2201-Alpha
+TW_DEVICE_VERSION := AI2201-Beta
+
+# SHRP Configuration
+SHRP_MAINTAINER := cd-Crypton
+SHRP_DEVICE_CODE := AI2201
+SHRP_PATH := device/asus/AI2201
+SHRP_REC_TYPE := Treble
+SHRP_DEVICE_TYPE := A/B
+SHRP_NOTCH := true
+SHRP_EDL_MODE := 1
+SHRP_OTG := /usbstorage
+SHRP_INTERNAL := /sdcard
+SHRP_OTG := /usb_otg
+SHRP_FLASH := 1
+SHRP_DARK := true
+SHRP_REC := /dev/block/bootdevice/by-name/recovery
+SHRP_EXPRESS := true
