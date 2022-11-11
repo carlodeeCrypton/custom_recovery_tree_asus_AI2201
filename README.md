@@ -9,16 +9,15 @@
 
 
 ## Status (Work in Progress)
-- Booting, but...
-  - USB/OTG doesn't work yet.
-  - Data doesn't mount.
-  - Also, Encrypted (but doesn't matter now, as data doesn't mount).
 
 - What's working...
-  - ABD now works, but MTP isn't stable due to /data not mounting.
+  - Decryption works.
+  - ADB and MTP works fine aswell.
   - Sideloading/Flashing .zip files.
   - Terminal/Console works fine.
-  - Other features need more test.
+
+- Issues
+  - USB Storage/OTG doesn't work yet.
 
 
 ## Credits
