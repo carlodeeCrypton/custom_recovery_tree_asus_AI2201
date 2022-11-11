@@ -20,9 +20,9 @@
   - USB Storage/OTG doesn't work yet.
 
 - PitchBlack:
-  - https://github.com/cd-Crypton/custom_recovery_tree_asus_AI2201/releases/tag/rog6-v20221110-3436698323
+  - [PBRP v3.2.0_12.1 Recovery Files](https://github.com/cd-Crypton/custom_recovery_tree_asus_AI2201/releases/tag/rog6-v20221110-3436698323)
 - SkyHawk:
-  - https://github.com/cd-Crypton/custom_recovery_tree_asus_AI2201/releases/tag/rog6-v20221110-3436698323
+  - [SHRP v3.1-3.7.0_12.1 Recovery File](https://github.com/cd-Crypton/custom_recovery_tree_asus_AI2201/releases/tag/rog6-v20221111-3442070358)
 
 ## Credits
 - [CaptainThrowback](https://github.com/CaptainThrowback)
