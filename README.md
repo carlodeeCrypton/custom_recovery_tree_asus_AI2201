@@ -19,6 +19,10 @@
 - Issues
   - USB Storage/OTG doesn't work yet.
 
+- PitchBlack:
+  - https://github.com/cd-Crypton/custom_recovery_tree_asus_AI2201/releases/tag/rog6-v20221110-3436698323
+- SkyHawk:
+  - https://github.com/cd-Crypton/custom_recovery_tree_asus_AI2201/releases/tag/rog6-v20221110-3436698323
 
 ## Credits
 - [CaptainThrowback](https://github.com/CaptainThrowback)
