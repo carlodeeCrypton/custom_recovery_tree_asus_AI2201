@@ -4,6 +4,7 @@ import /init.recovery.qcom_decrypt.rc
 
 on init
     write /sys/class/backlight/panel0-backlight/brightness 200
+    start vibrator-service
 
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
@@ -25,3 +26,8 @@ on post-fs-data
     restorecon_recursive /batinfo
 # --- ASUS_BSP : add for asus battery safety upgrade and health partition
 
+service vibrator-service /system/bin/vendor.qti.hardware.vibrator@1.2-service
+    user root
+    group root
+    disabled
+    seclabel u:r:recovery:s0
