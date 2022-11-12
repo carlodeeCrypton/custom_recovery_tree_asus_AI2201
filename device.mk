@@ -96,6 +96,9 @@ PRODUCT_EXTRA_RECOVERY_KEYS += \
 # Enable Fuse Passthrough
 PRODUCT_PROPERTY_OVERRIDES += persist.sys.fuse.passthrough.enable=true
 
+PRODUCT_COPY_FILES += \
+     $(LOCAL_PATH)/prebuilt/modules/qcom-hv-haptics.ko:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/lib/modules/1.1/qcom-hv-haptics.ko
+
 # Copy modules for depmod
 #PRODUCT_COPY_FILES += \
 #    $(call find-copy-subdir-files,*.ko,device/asus/AI2201/prebuilt/modules/,$(TARGET_COPY_OUT_RECOVERY)/root/vendor/lib/modules/1.1/)
