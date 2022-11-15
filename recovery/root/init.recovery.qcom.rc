@@ -31,6 +31,7 @@ service vibrator-service /vendor/bin/hw/vendor.qti.hardware.vibrator.service
     class hal
     user root
     group root
+    disabled
     seclabel u:r:recovery:s0
 
 on property:sys.boot_completed=1
