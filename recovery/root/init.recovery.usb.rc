@@ -42,8 +42,6 @@ on property:vendor.sys.usb.adb.disabled=*
 
 # Set default value on sys.usb.configfs early in boot sequence. It will be
 # overridden in `on boot` action of init.hardware.rc.
-on init
-    setprop sys.usb.configfs 0
 
 # Used to disable USB when switching states
 on property:sys.usb.config=none && property:sys.usb.configfs=0
