@@ -41,8 +41,8 @@ on property:sys.usb.config=none && property:sys.usb.configfs=0
 
 on property:sys.usb.config=adb && property:sys.usb.configfs=0
     write /sys/class/android_usb/android0/enable 0
-    write /sys/class/android_usb/android0/idVendor 18d1
-    write /sys/class/android_usb/android0/idProduct 4EE7
+    write /sys/class/android_usb/android0/idVendor 0x05C6
+    write /sys/class/android_usb/android0/idProduct 0xF000
     write /sys/class/android_usb/android0/functions ${sys.usb.config}
     write /sys/class/android_usb/android0/enable 1
     start adbd
@@ -50,16 +50,16 @@ on property:sys.usb.config=adb && property:sys.usb.configfs=0
 
 on property:sys.usb.config=accessory && property:sys.usb.configfs=0
     write /sys/class/android_usb/android0/enable 0
-    write /sys/class/android_usb/android0/idVendor 18d1
-    write /sys/class/android_usb/android0/idProduct 2d00
+    write /sys/class/android_usb/android0/idVendor 0x05C6
+    write /sys/class/android_usb/android0/idProduct 0x9015
     write /sys/class/android_usb/android0/functions ${sys.usb.config}
     write /sys/class/android_usb/android0/enable 1
     setprop sys.usb.state ${sys.usb.config}
 
 on property:sys.usb.config=accessory,adb && property:sys.usb.configfs=0
     write /sys/class/android_usb/android0/enable 0
-    write /sys/class/android_usb/android0/idVendor 18d1
-    write /sys/class/android_usb/android0/idProduct 2d01
+    write /sys/class/android_usb/android0/idVendor 0x18d1
+    write /sys/class/android_usb/android0/idProduct 0x4ee7
     write /sys/class/android_usb/android0/functions ${sys.usb.config}
     write /sys/class/android_usb/android0/enable 1
     start adbd
