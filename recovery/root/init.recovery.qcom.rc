@@ -12,10 +12,22 @@ on fs
 
 on boot
     start health-hal-2-1
+    start variant-script
 
 on post-fs
     start boot-hal-1-2
 
+# Mount firmware
+    mkdir /firmware
+    mount vfat /dev/block/bootdevice/by-name/modem${ro.boot.slot_suffix} /firmware ro
+
+on property:twrp.modules.loaded=true
+    # Load ADSP firmware for PMIC
+    wait /sys/kernel/boot_adsp/boot
+    write /sys/kernel/boot_adsp/boot 1
+    wait /sys/class/power_supply/battery
+    start health-hal-2-1
+    setprop sys.usb.config mtp,adb
 
 on post-fs-data
 # +++ ASUS_BSP : add for asus battery safety upgrade and health partition
