@@ -176,7 +176,7 @@ RECOVERY_BINARY_SOURCE_FILES += $(TARGET_OUT_EXECUTABLES)/strace
 # TWRP specific build flags
 TW_USE_SERIALNO_PROPERTY_FOR_DEVICE_ID := true
 TW_NO_SCREEN_BLANK := true
-TW_LOAD_VENDOR_MODULES += "qcom-hv-haptics.ko"
+TW_LOAD_VENDOR_MODULES += "adsp_loader_dlkm.ko focaltech_fts_3658u.ko qcom-hv-haptics.ko qti_battery_charger.ko"
 
 # TWRP Version
 TW_DEVICE_VERSION := AI2201-Beta
