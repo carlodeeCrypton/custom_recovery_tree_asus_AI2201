@@ -12,22 +12,16 @@ on fs
 
 on boot
     start health-hal-2-1
-    start variant-script
 
 on post-fs
     start boot-hal-1-2
-
-# Mount firmware
-    mkdir /firmware
-    mount vfat /dev/block/bootdevice/by-name/modem${ro.boot.slot_suffix} /firmware ro
-
-on property:twrp.modules.loaded=true
-    # Load ADSP firmware for PMIC
-    wait /sys/kernel/boot_adsp/boot
-    write /sys/kernel/boot_adsp/boot 1
-    wait /sys/class/power_supply/battery
-    start health-hal-2-1
-    setprop sys.usb.config mtp,adb
+    chown system system /sys/class/leds/vibrator/mem_play
+    chown system system /sys/class/leds/vibrator/gain
+    chown system system /sys/class/leds/vibrator/index
+    chown system system /sys/class/leds/vibrator/duration
+    chown system system /sys/class/leds/vibrator/activate
+    write /sys/class/leds/vibrator/trigger "transient"
+    start vibrator-service
 
 on post-fs-data
 # +++ ASUS_BSP : add for asus battery safety upgrade and health partition
@@ -43,6 +37,7 @@ service vibrator-service /vendor/bin/hw/vendor.qti.hardware.vibrator.service
     class hal
     user root
     group root
+    setenv LD_LIBRARY_PATH /vendor/lib64:/vendor/lib:/system/lib64:/system/lib:/sbin
     disabled
     seclabel u:r:recovery:s0
 
