@@ -4,6 +4,7 @@ import /init.recovery.qcom_decrypt.rc
 
 on init
     write /sys/class/backlight/panel0-backlight/brightness 200
+    write /sys/class/leds/vibrator/trigger "transient"
     start vibrator-service
 
 on fs
@@ -12,16 +13,16 @@ on fs
 
 on boot
     start health-hal-2-1
+    chown root root /sys/class/timed_output/vibrator/enable
+    chown root root /sys/class/leds/vibrator/trigger
+    chown root root /sys/class/leds/vibrator/activate
+    chown root root /sys/class/leds/vibrator/brightness
+    chown root root /sys/class/leds/vibrator/duration
+    chown root root /sys/class/leds/vibrator/state
+    chown root root /sys/class/timed_output/vibrator/enable
 
 on post-fs
     start boot-hal-1-2
-    chown system system /sys/class/leds/vibrator/mem_play
-    chown system system /sys/class/leds/vibrator/gain
-    chown system system /sys/class/leds/vibrator/index
-    chown system system /sys/class/leds/vibrator/duration
-    chown system system /sys/class/leds/vibrator/activate
-    write /sys/class/leds/vibrator/trigger "transient"
-    start vibrator-service
 
 on post-fs-data
 # +++ ASUS_BSP : add for asus battery safety upgrade and health partition
