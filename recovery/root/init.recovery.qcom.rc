@@ -13,7 +13,6 @@ on fs
 
 on boot
     start health-hal-2-1
-    chown root root /sys/class/timed_output/vibrator/enable
     chown root root /sys/class/leds/vibrator/trigger
     chown root root /sys/class/leds/vibrator/activate
     chown root root /sys/class/leds/vibrator/brightness
