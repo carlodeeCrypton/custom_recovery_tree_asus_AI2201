@@ -33,7 +33,7 @@ on post-fs-data
     restorecon_recursive /batinfo
 # --- ASUS_BSP : add for asus battery safety upgrade and health partition
 
-service vibrator-service /vendor/bin/hw/vendor.qti.hardware.vibrator.service
+service vibrator-service /system/bin/vendor.qti.hardware.vibrator.service
     user root
     group root
     setenv LD_LIBRARY_PATH /vendor/lib64:/vendor/lib:/system/lib64:/system/lib:/sbin
