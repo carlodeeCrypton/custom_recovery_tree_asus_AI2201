@@ -51,7 +51,8 @@ on property:ro.boot.usbcontroller=*
     write /sys/bus/platform/devices/${ro.boot.usb.dwc3_msm:-a600000.ssusb}/mode peripheral
     wait /sys/class/udc/${ro.boot.usbcontroller} 1
 
-on post-fs
+on fs
+    mkdir /config
     mount configfs none /config
     mkdir /config/usb_gadget/g1 0770
     mkdir /config/usb_gadget/g2 0770
@@ -79,6 +80,8 @@ on post-fs
     mkdir /dev/usb-ffs/adb 0770 shell system
     mount functionfs adb /dev/usb-ffs/adb uid=2000,gid=1000,rmode=0770,fmode=0660
     setprop sys.usb.mtp.device_type 3
+    setprop sys.usb.configfs 1
+    setprop vendor.usb.use_ffs_mtp 1
 
 on post-fs && property:vendor.usb.use_ffs_mtp=1
    mkdir /config/usb_gadget/g1/functions/ffs.mtp
