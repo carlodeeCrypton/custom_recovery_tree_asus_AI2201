@@ -171,8 +171,12 @@ on property:sys.usb.ffs.ready=1 && property:sys.usb.config=mass_storage,adb && p
     write /config/usb_gadget/g1/idProduct 0x9015
     symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f1
     symlink /config/usb_gadget/g1/functions/mass_storage.0 /config/usb_gadget/g1/configs/b.1/f2
+    write /config/usb_gadget/g1/functions/mass_storage.0/lun.0/ro 1
+    write /config/usb_gadget/g1/functions/mass_storage.0/lun.0/cdrom 1
+    write /config/usb_gadget/g1/functions/mass_storage.0/lun.0/removable 0
+    write /config/usb_gadget/g1/functions/mass_storage.0/lun.0/file /dev/block/platform/soc/1d84000.ufshc/by-name/vendor
     write /config/usb_gadget/g1/UDC ${sys.usb.controller}
-    setprop sys.usb.state ${sys.usb.config}
+    setprop sys.usb.state ${sys.usb.config
 
 on property:sys.usb.config=adb && property:sys.usb.configfs=1
     start adbd
@@ -189,7 +193,7 @@ on property:sys.usb.config=mtp && property:sys.usb.configfs=1
     write /config/usb_gadget/g1/UDC ${sys.usb.controller}
     setprop sys.usb.state ${sys.usb.config}
 
-on property:sys.usb.config=mtp,adb && property:sys.usb.configfs=1
+on property:sys.usb.config=mtp,adb,mass_storage && property:sys.usb.configfs=1
     start adbd
 
 on property:sys.usb.ffs.ready=1 && property:sys.usb.config=mtp,adb && property:sys.usb.configfs=1
